@@ -7,9 +7,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class MealTrackerGUI extends BaseUI {
-    public MealTrackerGUI() {
-        super("#1 - Meal Selection");
+public class _01_MealTracker extends BaseUI {
+    public _01_MealTracker() {
+        super();
+        // change status bar text
+        JLabel statusBar = (JLabel) frame.getContentPane().getComponent(0);
+        statusBar.setText("#1 - Meal Tracker");
         // Set the background color of the frame
         frame.getContentPane().setBackground(new Color(205, 232, 181));
 
@@ -109,6 +112,6 @@ public class MealTrackerGUI extends BaseUI {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new MealTrackerGUI().show());
+        SwingUtilities.invokeLater(() -> new _01_MealTracker().show());
     }
 }
