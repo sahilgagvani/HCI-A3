@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +26,14 @@ public class MealTrackerGUI extends BaseUI {
             Image scaledIcon = originalIcon.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
             JLabel searchIcon = new JLabel(new ImageIcon(scaledIcon));
             searchIcon.setPreferredSize(new Dimension(30, 30));
+            searchIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            searchIcon.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    // Handle the click event here
+                    System.out.println("Search icon clicked");
+                }
+            });
             searchPanel.add(searchIcon, BorderLayout.EAST);
         } catch (IOException e) {
             e.printStackTrace();
@@ -51,21 +61,25 @@ public class MealTrackerGUI extends BaseUI {
         }
         frame.add(mealImage);
 
-
         // Nutrition Facts Placeholder
         JTextArea nutritionFacts = new JTextArea("Nutrition Facts\nCalories: 302\nProtein: 31g\nCarbs: 7.6g\nFat: 17g");
         nutritionFacts.setEditable(false);
         nutritionFacts.setBounds(180, 120, 170, 80);
+        nutritionFacts.setFocusable(false);
         frame.add(nutritionFacts);
 
         // Portion Size
-        JLabel portionLabel = new JLabel("Enter Portion Size:");
+        JLabel portionLabel = new JLabel("Enter Portion Size: (in g)");
         portionLabel.setBounds(50, 220, 150, 30);
         frame.add(portionLabel);
 
         JTextField portionField = new JTextField();
         portionField.setBounds(200, 220, 100, 30);
         frame.add(portionField);
+
+        JButton submitButton = new JButton("SUBMIT");
+        submitButton.setBounds(310, 220, 80, 30);
+        frame.add(submitButton);
 
         // Daily Goals
         JLabel dailyGoalsLabel = new JLabel("Your Daily Goals:");
@@ -75,17 +89,22 @@ public class MealTrackerGUI extends BaseUI {
         JTextArea dailyGoals = new JTextArea("Protein: 45%\nCarbs: 38%\nFat: 42%");
         dailyGoals.setEditable(false);
         dailyGoals.setBounds(200, 270, 100, 60);
+        dailyGoals.setFocusable(false);
         frame.add(dailyGoals);
 
         // Buttons
         JButton deleteMealButton = new JButton("DELETE MEAL");
-        deleteMealButton.setBounds(50, 350, 120, 40);
+        deleteMealButton.setBounds(50, 350, 140, 40);
         deleteMealButton.setBackground(Color.RED);
+        deleteMealButton.setOpaque(true);
+        deleteMealButton.setBorderPainted(false);
         frame.add(deleteMealButton);
 
         JButton saveMealButton = new JButton("SAVE MEAL");
-        saveMealButton.setBounds(200, 350, 120, 40);
+        saveMealButton.setBounds(200, 350, 140, 40);
         saveMealButton.setBackground(Color.GREEN);
+        saveMealButton.setOpaque(true);
+        saveMealButton.setBorderPainted(false);
         frame.add(saveMealButton);
     }
 
