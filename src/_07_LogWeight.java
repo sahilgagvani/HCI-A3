@@ -42,7 +42,7 @@ public class _07_LogWeight extends BaseUI {
         label2.setBounds(50, 400, 300, 30);
         frame.add(label2);
 
-// Buttons Panel
+        // Buttons Panel
         JPanel buttonPanel = new JPanel(new GridLayout(1, 4, 10, 0));
         buttonPanel.setBounds(50, 450, 300, 40);
         buttonPanel.setOpaque(false);
