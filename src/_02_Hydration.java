@@ -16,7 +16,7 @@ public class _02_Hydration extends BaseUI {
         super();
         // change status bar text
         JLabel statusBar = (JLabel) frame.getContentPane().getComponent(0);
-        statusBar.setText("#2 - Hydration Tracker");
+        statusBar.setText("Hydration Tracker");
         // Set the background color of the frame
         frame.getContentPane().setBackground(new Color(204, 229, 255));
 

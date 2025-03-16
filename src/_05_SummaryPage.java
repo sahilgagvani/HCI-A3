@@ -12,7 +12,7 @@ public class _05_SummaryPage extends BaseUI {
         // Change status bar text
         JLabel statusBar = (JLabel) frame.getContentPane().getComponent(0);
         statusBar.setText("Weekly Summary");
-        statusBar.setForeground(Color.WHITE);
+        statusBar.setForeground(Color.BLACK);
 
         // Set the background color of the frame
         frame.getContentPane().setBackground(new Color(235, 235, 235));

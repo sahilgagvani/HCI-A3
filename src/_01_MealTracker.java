@@ -12,7 +12,7 @@ public class _01_MealTracker extends BaseUI {
         super();
         // change status bar text
         JLabel statusBar = (JLabel) frame.getContentPane().getComponent(0);
-        statusBar.setText("#1 - Meal Tracker");
+        statusBar.setText("Meal Tracker");
         // Set the background color of the frame
         frame.getContentPane().setBackground(new Color(205, 232, 181));
 

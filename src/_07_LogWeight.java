@@ -11,7 +11,7 @@ public class _07_LogWeight extends BaseUI {
         // Change status bar text
         JLabel statusBar = (JLabel) frame.getContentPane().getComponent(0);
         statusBar.setText("Weight Management");
-        statusBar.setForeground(Color.WHITE);
+        statusBar.setForeground(Color.BLACK);
 
         // Set the background color of the frame
         frame.getContentPane().setBackground(new Color(249, 211, 224));

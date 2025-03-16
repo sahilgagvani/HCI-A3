@@ -21,8 +21,7 @@ abstract class BaseUI {
 
         // Status Bar
         JLabel statusBar = new JLabel("Base Status", SwingConstants.CENTER);
-        statusBar.setOpaque(true);
-        statusBar.setBackground(new Color(180, 150, 200));//red color =
+        statusBar.setBackground(new Color(180, 150, 200));
         statusBar.setBounds(0, 0, width, 30);
         frame.add(statusBar);
 
@@ -36,11 +35,25 @@ abstract class BaseUI {
             backIconLabel.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    // Handle the click event here
-                    System.out.println("Back icon clicked");
+                    frame.dispose(); // Close the current frame
+                    new Main().show(); // Open the Main frame
                 }
             });
             statusBar.add(backIconLabel);
+
+            // Add battery icon to the status bar
+            BufferedImage batteryIcon = ImageIO.read(new File("resources/ui/battery.png"));
+            Image scaledBatteryIcon = batteryIcon.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+            JLabel batteryIconLabel = new JLabel(new ImageIcon(scaledBatteryIcon));
+            batteryIconLabel.setBounds(320, 0, 80, 30);
+            statusBar.add(batteryIconLabel);
+
+            // Add watch icon to the status bar
+            BufferedImage watchIcon = ImageIO.read(new File("resources/ui/watch.png"));
+            Image scaledWatchIcon = watchIcon.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+            JLabel watchIconLabel = new JLabel(new ImageIcon(scaledWatchIcon));
+            watchIconLabel.setBounds(290, 0, 30, 30);
+            statusBar.add(watchIconLabel);
         } catch (IOException e) {
             e.printStackTrace();
         }

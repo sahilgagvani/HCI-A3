@@ -10,7 +10,7 @@ public class _03_HeartRate extends BaseUI {
         super();
         // change status bar text
         JLabel statusBar = (JLabel) frame.getContentPane().getComponent(0);
-        statusBar.setText("#3 - Heart Rate");
+        statusBar.setText("Heart Rate");
         // Set the background color of the frame
         frame.getContentPane().setBackground(new Color(255, 99, 71)); // Light red background
 
